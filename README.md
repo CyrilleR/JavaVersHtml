@@ -2,7 +2,7 @@
 
 A simple extension for BlueJ to copy Java code converted in HTML to the clipboard
 
-Une petite extension pour BlueJ qui permet de copier uen partie du code Java en HTML dans le presse-papier.
+Une petite extension pour BlueJ qui permet de copier une partie du code Java en HTML dans le presse-papier.
 
 Français
 ---
