@@ -4,6 +4,7 @@ Une petite extension pour BlueJ qui permet de copier une partie du code Java en 
 
 A simple extension for BlueJ to copy Java code converted in HTML to the clipboard
 
+http://javavershtml.recoding.fr/
 
 Français
 ---
