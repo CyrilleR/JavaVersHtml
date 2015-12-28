@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Cyrille Richard
+ * Copyright 2016 Cyrille Richard
  * 
  * This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,6 @@
  *
  */
 package presentateurdecode;
-
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard; 
 import java.awt.datatransfer.StringSelection;
@@ -29,6 +28,9 @@ import java.util.ArrayList;
  * dans le presse papier.
  * 
  * Historique des versions:
+ * 
+ *  v0.9 - reposit GitHub et révision de la doc et des noms
+ * 
  *  v0.8 - Différenciation commenatires / javadoc
  * 
  *  v0.7 - ajout des preferences, choix de couleurs
@@ -43,16 +45,13 @@ import java.util.ArrayList;
  * @author Cyrille RICHARD
  *         dans le cadre de l'enseignement NFP121 - CNAM
  * 
- * @version 0.8
+ * @version 0.9
  * 
  */
 
 public class JavaVersHtml {
     
     private static Preferences prefs;
-    
-    /* @author, @param...*/
-    /* ESCAPE MAL GERE? */
 
     /**
      * Traduit chaque ligne de code Java en html et le met dans le clipboard
@@ -64,7 +63,6 @@ public class JavaVersHtml {
         String texteHtml = jvh.javaToHtml(texteJava, prefs);
         Toolkit toolKit = Toolkit.getDefaultToolkit();
         Clipboard pressePapier = toolKit.getSystemClipboard();
-        //pressePapier.setContents(new StringSelection("TEST OK"),null);
         pressePapier.setContents(new StringSelection(texteHtml), null);
     }
     
@@ -128,9 +126,6 @@ public class JavaVersHtml {
         
         return constructeur.getTexteHtml();
     }
-    
-
-    
     
     /**
      * remplace les caractères <> et accents par leur code html

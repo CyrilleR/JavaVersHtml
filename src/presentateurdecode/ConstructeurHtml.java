@@ -1,7 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2016 Cyrille Richard
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
  */
 package presentateurdecode;
 
@@ -9,7 +21,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Cyrille
+ * classe de construction du fichier html. Gère et mémorise les états du code.
+ * 
+ * @author Cyrille Richard
  */
 public class ConstructeurHtml {
     /* Liste des mots-clefs*/
@@ -40,7 +54,7 @@ public class ConstructeurHtml {
     private static String BALISE_OUVRE_PRIMITIFS;
     private static String BALISE_FERME_PRIMITIFS;
     
-    /*Gestion des états*/
+    /*Gestion des états - State Pattern*/
     private Etat etat;
     private Etat etatPrecedent;
     
@@ -56,10 +70,16 @@ public class ConstructeurHtml {
     private final Etat etatSortieJavadoc;
     private final Etat etatEscape;
     
+    /** Liste des lignes du code HTML*/
     ArrayList<String> lignesHtml;
+    /** Chaine temporaire de traitement */
     String ligneHtml;
+    /** Chaine temporaire de traitement */
     String tempString;
     
+    /**
+     * Constructeur de l'objet ConstructeurHtml
+     */
     public ConstructeurHtml() {
         lignesHtml = new ArrayList<>();
         etatSlash = new EtatSlash(this);
@@ -78,6 +98,13 @@ public class ConstructeurHtml {
         etatPrecedent = etatNormal;
     }
     
+    /**
+     * 
+     * ajoute une ligne à a liste des lignes HTML
+     * 
+     * @param s 
+     *          chaine à ajouter à la liste
+     */
     public void addString(String s) {
         lignesHtml.add(s);
     }
